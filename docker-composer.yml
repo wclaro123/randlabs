@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    container_name: balance.db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: balance
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db-data:/var/lib/postgresql/testdata
+
+volumes:
+  db-data:
